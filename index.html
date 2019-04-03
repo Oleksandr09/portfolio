@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Alex Katiukha</title>
+    <link rel="icon" type="image/ico" href="logo.ico">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("select").change(function () {
+                $(this).find("option:selected").each(function () {
+                    var optionValue = $(this).attr("value");
+                    if (optionValue) {
+                        $(".skillset").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else {
+                        $(".skillset").hide();
+                    }
+                });
+            }).change();
+
+            $("#btn-menu").click(function () {
+                $("#btn-menu").hide("drop", { direction: "up" }, "slow");
+                $(".nav").addClass('visible');
+                $("#btn-close").show("drop", { direction: "down" }, "slow");
+            });
+
+            $("#btn-close").click(function () {
+                $(".nav").removeClass('visible');
+                $("#btn-close").hide("drop", { direction: "up" }, "slow")
+                $("#btn-menu").show("drop", { direction: "down" }, "slow");
+            })
+        });
+
+
+
+    </script>
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+
+<body>
+    <header class="page-nav">
+        <i id="btn-close" class="fas fa-times fa-2x"></i>
+        <ul class="nav">
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#work">My Work</a></li>
+            <li><a class="nav-link" href="/contact.html">Contact Me</a></li>
+        </ul>
+        <i id="btn-menu" class="fas fa-bars fa-2x btn-menu"></i>
+    </header>
+
+
+    <section id="main">
+        <div>
+            <h1>Web Developer</h1>
+            <p>I code simple things with attention to details</p>
+            <img src="/src/img/avatar.jpg" alt="">
+            <a href="#about"><i class="fas fa-angle-double-down fa-5x"></i></a>
+        </div>
+
+    </section>
+    <section id="about">
+        <div>
+            <h2>Hi, I am Alex. Thanks for visiting my page</h2>
+            <p>I am a Web Developer and I love coding things.</p>
+            <p>I use my knowledge to transform my ideas into projects.</p>
+            <p>I use my time to learn frameworks,
+                libraries and
+                languages.</p>
+            <p>I am a huge fan of video games and live concerts!</p>
+            <h3>My rule is one step at a time!</h3>
+            </p>
+        </div>
+    </section>
+
+    <section id="skills-section">
+
+        <h1>Skills</h1>
+
+        <div class="dropdown">
+            <select class="select">
+                <option value='front'>Front-End</option>
+                <option value='frame'>Frameworks and libraries</option>
+                <option value='back'>Back-End Technologies</option>
+                <option value='db'>Databases</option>
+                <option value='design'>Design Tools</option>
+            </select>
+        </div>
+
+        <!-- <h1>Skills</h1> -->
+        <div class="skillset front">
+            <p>HTML</p>
+            <div class="skill-container">
+                <div class="skills html">90%</div>
+            </div>
+            <p>CSS</p>
+            <div class="skill-container">
+                <div class="skills css">90%</div>
+            </div>
+            <p>JavaScript</p>
+            <div class="skill-container">
+                <div class="skills javascript">65%</div>
+            </div>
+        </div>
+
+        <div class="skillset frame">
+            <p>Bootstrap</p>
+            <div class="skill-container">
+                <div class="skills bootstrap">80%</div>
+            </div>
+            <p>SASS</p>
+            <div class="skill-container">
+                <div class="skills sass">70%</div>
+            </div>
+            <p>jQuery</p>
+            <div class="skill-container">
+                <div class="skills jquery">70%</div>
+            </div>
+            <p>ReactJS</p>
+            <div class="skill-container">
+                <div class="skills react">70%</div>
+            </div>
+        </div>
+
+        <div class="skillset back">
+            <p>NodeJS</p>
+            <div class="skill-container">
+                <div class="skills node">70%</div>
+            </div>
+            <p>Express</p>
+            <div class="skill-container">
+                <div class="skills node">70%</div>
+            </div>
+        </div>
+
+        <div class="skillset db">
+            <p>PostgreSQL</p>
+            <div class="skill-container">
+                <div class="skills postgres">55%</div>
+            </div>
+            <p>MongoDB</p>
+            <div class="skill-container">
+                <div class="skills mongo">40%</div>
+            </div>
+        </div>
+
+        <div class="skillset design">
+            <p>Adobe Photoshop</p>
+            <div class="skill-container">
+                <div class="skills photoshop">50%</div>
+            </div>
+            <p>Adobe Illustrator</p>
+            <div class="skill-container">
+                <div class="skills illustrator">70%</div>
+            </div>
+            <p>Avocode</p>
+            <div class="skill-container">
+                <div class="skills avocode">80%</div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="work">
+
+        <h1>My work</h1>
+        <div class="flex-container">
+            <div class="work-item">
+                <header class="project-name">
+                    <h1>To Do List</h1>
+                </header>
+                <a class="project-link" href='https://silly-mcnulty-e77067.netlify.com' target="_blank"><img
+                        src='./src/img/todo-list.png' /></a>
+                <footer class="project-description">
+                    <span class="stack">Stack:</span> ReactJS
+                </footer>
+            </div>
+            <div class="work-item">
+                <header class="project-name">
+                    <h1>Ghibly Movies</h1>
+                </header>
+                <a class="project-link" href='https://fervent-khorana-c39bb0.netlify.com/' target='_blank'><img
+                        src='./src/img/ghibly.png' /></a>
+                <footer class="project-description">
+                    <span class="stack">Stack:</span> ReactJS, Ghibly Movies API
+                </footer>
+            </div>
+            <div class="work-item">
+                <header class="project-name">
+                    <h1>To Do List</h1>
+                </header>
+                <a class="project-link" href='https://unruffled-gates-bbe957.netlify.com' target="blank"><img
+                        src='./src/img/pure-to-do.png' /></a>
+                <footer class="project-description">
+                    <span class="stack">Stack:</span> HTML, CSS, Vanilla JavaScript
+                </footer>
+            </div>
+            <div class="work-item">
+                <header class="project-name">
+                    <h1>Weather App</h1>
+                </header>
+                <a class="project-link" href='https://kind-mcnulty-9b3c6d.netlify.com/' target="_blank"><img
+                        src='./src/img/weather-app.png' /></a>
+                <footer class="project-description">
+                    <span class="stack">Stack:</span> ReactJS, Openweathemap API
+                </footer>
+            </div>
+
+        </div>
+
+        <h1>More Projects Coming Soon...</h1>
+    </section>
+    <footer class="page-footer">
+        <ul class="social-container">
+            <li><a href="https://github.com/Oleksandr09" target="_blank"><i class="fab fa-github fa-2x"></i></a></li>
+            <li><a href="https://twitter.com/AlexKatiukha" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></li>
+            <li><a href="https://www.instagram.com/lexis_dev/" target="_blank"><i
+                        class="fab fa-instagram fa-2x"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/oleksandrkatiukha/" target="_blank"><i
+                        class="fab fa-linkedin-in fa-2x"></i></a></li>
+        </ul>
+
+    </footer>
+
+
+
+
+    <script>
+    </script>
+</body>
+
+</html>
